@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class LoadDatabase implements CommandLineRunner {
     @Autowired
@@ -14,13 +16,15 @@ public class LoadDatabase implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         System.out.println("IT WORKS");
-        AppUser user = new AppUser("First", "Name", "chrisbe@gadasf.ca");
+        AppUser user = new AppUser("First", "Name", "chrisbe@gadasf.ca", "Meeeep");
         userRepository.saveAndFlush(user);
         UserGroup group = new UserGroup();
         group.setName("HULLo");
         user.getGroups().add(group);
         userRepository.saveAndFlush(user);
-        AppUser test = userRepository.findOne("chrisbe@gadasf.ca");
+        List<AppUser> users = userRepository.findAll();
+
+
 
     }
 }

@@ -13,6 +13,9 @@ public class AppUser {
     private String lastName;
     private String password;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String username;
     private String email;
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
@@ -27,6 +30,7 @@ public class AppUser {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.username = email;
         this.password = password;
     }
 }
