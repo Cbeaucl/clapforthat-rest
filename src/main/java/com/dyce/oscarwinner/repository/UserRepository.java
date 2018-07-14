@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.Id;
 @Repository
-@RestResource(exported = false)
+@RestResource(exported = true)
 public interface UserRepository extends JpaRepository<AppUser, Long> {
     AppUser findByEmail(String email);
 }

@@ -26,11 +26,11 @@ public class AppUser {
     List<Choice> choices = new ArrayList<>();
     public AppUser(){};
 
-    public AppUser(String firstName, String lastName, String email, String password) {
+    public AppUser(String firstName, String lastName, String email, String password, String username) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.username = email;
+        this.username = username;
         this.password = password;
     }
 }

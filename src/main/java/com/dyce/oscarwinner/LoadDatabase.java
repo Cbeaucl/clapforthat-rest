@@ -16,7 +16,7 @@ public class LoadDatabase implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         System.out.println("IT WORKS");
-        AppUser user = new AppUser("First", "Name", "chrisbe@gadasf.ca", "Meeeep");
+        AppUser user = new AppUser("First", "Name", "chrisbe@gadasf.ca", "Meeeep", "chrisbe@gadasf.ca");
         userRepository.saveAndFlush(user);
         UserGroup group = new UserGroup();
         group.setName("HULLo");
